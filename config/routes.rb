@@ -1,6 +1,10 @@
 MyGithub::Application.routes.draw do
   resources :posts
 
+  get "authorize" => "github#authorize"
+  get "callback" => "github#callback"
+  get "repo_list" => "github#repo_list"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
