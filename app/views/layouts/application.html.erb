@@ -44,37 +44,78 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">MyGithub</a>
+          <a class="brand" href="#">Quusome</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-asterisk icon-large"></i>
+                    <span class="badge badge-important">0</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-comment icon-large"></i>
+                    <span class="badge badge-important">0</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-group icon-large"></i>
+                    <span class="badge badge-important">0</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li>
+                  <li><a href="#">test</a></li> 
+                </ul>
+              </li>
+            </ul>
+
+            <form class="navbar-search pull-left" action>
+              <input type="text" class="search-query span2" placeholder="Search"/>
+
+            </form>
+
+            <ul class="nav pull-right">
+              <li style="width: 40px"><a href="#" rel="tooltip" data-placement="bottom" data-original-title="111"><i class="icon-edit icon-large"></i></a></li>
+              <li style="width: 40px"><a href="#"><i class="icon-trophy icon-large"></i></a></li>
+              <li><a href="#"><i class="icon-signout icon-large"></i></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div id="fix-for-navbar-fixed-top-spacing" style="height: 42px;">&nbsp;</div>
+    <div id="fix-for-navbar-fixed-top-spacing" style="height: 60px;">&nbsp;</div>
     <div class="container">
         <div class="row">
-          <div class="span9">
+          <div class="span1">
+            11
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12">
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
-        </div><!--/row-->
+          
 
       <footer>
         <p>&copy; Company 2012</p>

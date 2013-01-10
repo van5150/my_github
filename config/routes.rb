@@ -1,4 +1,7 @@
 MyGithub::Application.routes.draw do
+  resources :quusomes
+
+
   resources :posts
 
   get "authorize" => "github#authorize"
