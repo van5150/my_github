@@ -1,3 +1,35 @@
 // Place all the styles related to the Quusomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'grid.css.less';
+
+@columns: 15;
+
+
+@total-width: 100%;
+
+article {
+  .column(10);
+
+}
+section {
+  .column(5);
+}
+
+.span1 {
+  .column(1);
+}
+
+.span2 {
+  .column(2);
+}
+
+.span3 {
+  .column(3);
+}
+.span15 {
+  .column(15);
+}
+
+
