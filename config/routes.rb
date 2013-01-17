@@ -1,12 +1,16 @@
 MyGithub::Application.routes.draw do
+  resources :my_watches
+
+
   resources :quusomes
 
 
   resources :posts
 
-  get "authorize" => "github#authorize"
-  get "callback" => "github#callback"
-  get "repo_list" => "github#repo_list"
+  get "authorize" => "githubtest#authorize"
+  get "callback" => "githubtest#callback"
+  get "repo_list" => "githubtest#repo_list"
+  get "githubtest"  => "githubtest#index"
 
 
   # The priority is based upon order of creation:

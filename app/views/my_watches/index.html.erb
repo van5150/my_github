@@ -1,0 +1,75 @@
+<%- model_class = MyWatch -%>
+<!--
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+-->
+
+<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">bookmark</a>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">bookmark</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_tag my_watches_path, :remote => true, :class =>"form-horizontal" do %>
+        <div class="control-group">
+          <label class="control-label" for="github_url">Github URL</label>
+          <div class="controls">
+            <input type="text" id="github_url" placeholder="Github URL" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="desc">Description</label>
+          <div class="controls">
+            <textarea id="desc"></textarea>
+          </div>
+
+        </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+
+<div id="fix-for-navbar-fixed-top-spacing" style="height: 30px;">&nbsp;</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:created_by) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @my_watches.each do |my_watch| %>
+      <tr>
+        <td><%= link_to my_watch.id, my_watch_path(my_watch) %></td>
+        <td><%= my_watch.created_by %></td>
+        <td><%=l my_watch.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_my_watch_path(my_watch), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      my_watch_path(my_watch),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!--
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_my_watch_path,
+            :class => 'btn btn-primary' %>
+ -->
